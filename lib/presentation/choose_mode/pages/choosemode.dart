@@ -1,4 +1,5 @@
 import 'dart:ui';
+import 'package:flutter/services.dart';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -48,47 +49,75 @@ class ChooseMode extends StatelessWidget {
                       children: [
                         Column(
                           children: [
-                            GestureDetector(onTap: () {
-                              context.read<ThemeCubit>().updateTheme(ThemeMode.light);
-
-                            },
+                            GestureDetector(
+                              onTap: () {
+                                HapticFeedback.lightImpact();
+                                context
+                                    .read<ThemeCubit>()
+                                    .updateTheme(ThemeMode.light);
+                              },
                               child: ClipOval(
                                 child: BackdropFilter(
-                                  filter: ImageFilter.blur(sigmaX: 10,sigmaY: 10)
-                                  ,child: Container(
+                                  filter:
+                                      ImageFilter.blur(sigmaX: 10, sigmaY: 10),
+                                  child: Container(
                                     height: 80,
                                     width: 80,
                                     decoration: BoxDecoration(
-                                        shape: BoxShape.circle, color: const Color(0xff30393C).withOpacity(0.5)),
-                                    child: SvgPicture.asset(AppVectors.sun,width:40 ,height:40 ,fit: BoxFit.none,),
+                                        shape: BoxShape.circle,
+                                        color: const Color(0xff30393C)
+                                            .withOpacity(0.5)),
+                                    child: SvgPicture.asset(
+                                      AppVectors.sun,
+                                      width: 40,
+                                      height: 40,
+                                      fit: BoxFit.none,
+                                    ),
                                   ),
                                 ),
                               ),
                             ),
-                            const Text('Light Mode',style:TextStyle(color: Colors.white),)
+                            const Text(
+                              'Light Mode',
+                              style: TextStyle(color: Colors.white),
+                            )
                           ],
                         ),
                         const SizedBox(width: 50),
                         Column(
                           children: [
-                            GestureDetector(onTap: () {
-                              context.read<ThemeCubit>().updateTheme(ThemeMode.dark);
-
-                            },
+                            GestureDetector(
+                              onTap: () {
+                                HapticFeedback.lightImpact();
+                                context
+                                    .read<ThemeCubit>()
+                                    .updateTheme(ThemeMode.dark);
+                              },
                               child: ClipOval(
                                 child: BackdropFilter(
-                                  filter: ImageFilter.blur(sigmaX: 10,sigmaY: 10)
-                                  ,child: Container(
-                                  height: 80,
-                                  width: 80,
-                                  decoration: BoxDecoration(
-                                      shape: BoxShape.circle, color: const Color(0xff30393C).withOpacity(0.5)),
-                                  child: SvgPicture.asset(AppVectors.moon,width:40 ,height:40 ,fit: BoxFit.none,),
-                                ),
+                                  filter:
+                                      ImageFilter.blur(sigmaX: 10, sigmaY: 10),
+                                  child: Container(
+                                    height: 80,
+                                    width: 80,
+                                    decoration: BoxDecoration(
+                                        shape: BoxShape.circle,
+                                        color: const Color(0xff30393C)
+                                            .withOpacity(0.5)),
+                                    child: SvgPicture.asset(
+                                      AppVectors.moon,
+                                      width: 40,
+                                      height: 40,
+                                      fit: BoxFit.none,
+                                    ),
+                                  ),
                                 ),
                               ),
                             ),
-                            const Text('Dark Mode',style:TextStyle(color: Colors.white),),
+                            const Text(
+                              'Dark Mode',
+                              style: TextStyle(color: Colors.white),
+                            ),
                           ],
                         ),
                       ],

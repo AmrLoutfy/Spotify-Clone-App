@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:spotify_clone/core/config/theme/app_colors.dart';
 
-class Basicbutton extends StatelessWidget {
+class BasicbuttonGr extends StatelessWidget {
   final VoidCallback onPressed;
   final String title;
   final double? height;
 
-  const Basicbutton(
+  const BasicbuttonGr(
       {required this.onPressed, required this.title, this.height, super.key});
 
   @override
@@ -13,6 +14,7 @@ class Basicbutton extends StatelessWidget {
     return ElevatedButton(
       onPressed: onPressed,
       style: ElevatedButton.styleFrom(
+        backgroundColor: AppColors.notselct,
         minimumSize: Size.fromHeight(height ?? 80),
       ),
       child: Text(

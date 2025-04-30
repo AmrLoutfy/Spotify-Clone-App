@@ -6,6 +6,8 @@ class AppVectors{
   static const String moon= '${basePath}moon${format}';
   static const String union= '${basePath}Union${format}';
   static const String union1= '${basePath}Union1${format}';
+  static const String logosm= '${basePath}smallLogo${format}';
+
 
 
 }

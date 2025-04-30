@@ -24,5 +24,5 @@ class AppTheme {
               backgroundColor: AppColors.primary,
               textStyle: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
               shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(30)))));
+                  borderRadius: BorderRadius.circular(20)))));
 }
